@@ -79,7 +79,3 @@ else:
 # Title
 st.markdown('<p class="main-header">🚗 Car Price Prediction System</p>', unsafe_allow_html=True)
 
-# Show error if files not loaded
-if error_msg:
-    st.error(f"""
-    ⚠️ **{
