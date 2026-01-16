@@ -29,24 +29,13 @@ st.markdown("""
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
-    .prediction-box {
-        background-color: #e8f4f8;
-        padding: 3rem;
-        border-radius: 10px;
-        text-align: center;
-        margin: 1rem 0;
-    }
     .price-text {
-        font-size: 5.5rem;
+        font-size: 6rem;
         font-weight: bold;
         color: #2ca02c;
-        margin: 0;
+        margin: 2rem 0;
         padding: 0;
-    }
-    .price-label {
-        font-size: 1.2rem;
-        color: #555;
-        margin-bottom: 1rem;
+        text-align: center;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -157,10 +146,8 @@ if page == "Price Predictor":
             prediction = model.predict(features)[0]
             
             # Display prediction
-            st.markdown('<div class="prediction-box">', unsafe_allow_html=True)
-            st.markdown('<p class="price-label">Predicted Market Price</p>', unsafe_allow_html=True)
+            st.markdown("### Predicted Market Price")
             st.markdown(f'<p class="price-text">${prediction:,.2f}</p>', unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
             
         except Exception as e:
             st.error(f"Error making prediction: {e}")
